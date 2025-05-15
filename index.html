@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss Fabulous Zimbabwe-International - Vote</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica', Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2vw;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1c1e21;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .model-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .vote-count {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            color: #606770;
+            margin-bottom: 1rem;
+        }
+
+        .vote-button {
+            background: #1877f2;
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .vote-button:hover {
+            background: #166fe5;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            margin-top: 0.8rem;
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Miss Fabulous Zimbabwe-International Pageant</h1>
+        <img src="https://virtualagency.co.za/wp-content/uploads/2025/05/shantel.jpg" alt="Model" class="model-image">
+        <h2>Shantel Chinangwa</h2>
+        <div class="vote-count">1073 / 5000 Votes</div>
+        <button class="vote-button" onclick="handleVote()">Vote</button>
+        <div class="error" id="errorMessage">Login to Facebook to vote</div>
+    </div>
+
+    <script>
+        function handleVote() {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
